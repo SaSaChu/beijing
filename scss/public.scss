@@ -1,0 +1,219 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+@include font-face("Monaco", font-files("monaco/monaco.ttf", "monaco/monaco.otf"));
+@include font-face("icomoon", font-files("icomoon/icomoon.eot", "icomoon/icomoon.woff", "icomoon/icomoon.ttf", "icomoon/icomoon.svg"));
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  @include font-smoothing(antialiased);
+}
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
+    @include font-smoothing(antialiased);
+  }
+}
+
+
+.icon-dash:before {
+  content: "\f0ca";
+}
+.icon-plus:before {
+  content: "\f05d";
+}
+.icon-close:before {
+  content: "\e5cd";
+}
+.icon-dehaze:before {
+  content: "\e3c7";
+}
+.icon-chevron-down:before {
+  content: "\e900";
+}
+.icon-chevron-left:before {
+  content: "\e901";
+}
+.icon-chevron-right:before {
+  content: "\e902";
+}
+.icon-chevron-up:before {
+  content: "\e903";
+}
+.icon-search:before {
+  content: "\e904";
+}
+
+
+
+
+html {
+  height: 100%;
+
+  body {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;  /* 1*12px=12px */
+    font-family: "微軟正黑體", Monaco, "Microsoft JhengHei" ;
+    color: rgba(50, 50, 50, 0.8);
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+
+    @include font-smoothing(antialiased);
+  }
+}
+
+$light_blue: rgba(13, 92, 163, 1.00);
+$deep_blue: rgba(30, 49, 80, 1.00);
+$light_gray: rgba(232, 232, 232, 1.00);
+$deep_gray: rgba(73, 73, 73, 1.00);
+
+
+#out_boxs {
+  display: inline-block;
+  width: 95vw;
+  height: 100vh;
+  margin:0 auto;
+  padding: 55px 0;
+  @include clearfix();
+
+  .left_boxs, .right_boxs {
+    display: inline-block;
+    height: 100%;
+    float: left;
+  }
+
+  // 左邊選單
+  .left_boxs {
+    width: 125px;
+    @include clearfix();
+
+    .close_button {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background-color: $deep_gray;
+      float: right;
+      margin: 5px 0 35px 0;
+      font-size: 3rem;
+      color: white;
+      text-decoration: none;
+      @include transition(background-color .3s);
+      cursor: pointer;
+
+      &:hover, &:active {
+        background-color: $light_blue;
+      }
+    }
+
+    a {
+      @include range-width(0, 1441px) {
+        padding: 20px 0;
+      }
+
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 5px;
+      padding: 25px 0;
+      background-color: $light_gray;
+      -webkit-border-top-left-radius: 40px;
+      -webkit-border-bottom-left-radius: 40px;
+      -moz-border-radius-topleft: 40px;
+      -moz-border-radius-bottomleft: 40px;
+      border-top-left-radius: 40px;
+      border-bottom-left-radius: 40px;
+
+      font-size: 1.2rem;
+      color: black;
+
+      cursor: pointer;
+      text-decoration: none;
+      @include transition(background-color, color .3s);
+
+      &:hover, &:active {
+        color: white;
+        background-color: $light_blue;
+      }
+
+      &.a_ac {
+        color: white;
+        background-color: $light_blue;
+      }
+    }
+  }
+
+  // 右邊選單
+  .right_boxs {
+    width: calc(100% - 125px);
+    background-color: $light_gray;
+    border: 5px solid $light_blue;
+    @include border-radius(5px);
+    @include clearfix();
+    position: relative;
+    
+    .R_left_boxs, .R_right_boxs {
+      display: inline-block;
+      float: left;
+    }
+
+    .R_left_boxs {
+      width: calc(100% - 350px);
+      height: 100%;
+
+      @include range-width(1100px, 1240px) {
+        width: calc(100% - 300px);
+      }
+
+      @include range-width(769px, 1100px) {
+        width: calc(100% - 250px);
+      }
+    }
+
+    .R_right_boxs {
+      position: absolute;
+      top: -5px;
+      right: 0;
+      width: calc(350px - 15px);
+      height: calc(100% + 5px + 5px);
+      margin-right: 15px;
+      background-color: white;
+
+      @include range-width(1100px, 1240px) {
+        width: calc(300px - 15px);
+      }
+
+      @include range-width(769px, 1100px) {
+        width: calc(250px - 15px);
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
