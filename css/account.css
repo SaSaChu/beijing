@@ -46,6 +46,42 @@
  * @author      ZEUS Design - http://www.zeusdesign.com.tw
  * @copyright   Copyright (c) 2016 ZEUS Design
  */
+.ac_title {
+  display: inline-block;
+  width: 100%;
+  padding: 70px 0;
+  color: #494949;
+  font-size: 2rem;
+}
+
+.ac_boxs {
+  display: inline-block;
+  width: 100%;
+  padding: 0 0 45px 100px;
+  *zoom: 1;
+  text-align: left;
+}
+.ac_boxs:after {
+  display: table;
+  content: "";
+  line-height: 0;
+  clear: both;
+}
+.ac_boxs:nth-child(2), .ac_boxs:nth-child(3) {
+  width: 50%;
+  float: left;
+}
+.ac_boxs .ac_name, .ac_boxs .ac_detail {
+  color: black;
+}
+.ac_boxs .ac_name {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+.ac_boxs .ac_detail {
+  font-size: 1.8rem;
+}
+
 .top_box {
   display: inline-block;
   width: 100%;

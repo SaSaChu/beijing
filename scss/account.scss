@@ -8,8 +8,43 @@
 $light_blue: rgba(13, 92, 163, 1.00);
 $deep_blue: rgba(30, 49, 80, 1.00);
 $light_gray: rgba(232, 232, 232, 1.00);
+$deep_gray: rgba(73, 73, 73, 1.00);
 
 // 內容左邊css
+.ac_title {
+  display: inline-block;
+  width: 100%;
+  padding: 70px 0;
+  color: $deep_gray;
+  font-size: 2rem;
+}
+
+.ac_boxs {
+  display: inline-block;
+  width: 100%;
+  padding: 0 0 45px 100px;
+  @include clearfix();
+  text-align: left;
+
+
+  &:nth-child(2), &:nth-child(3) {
+    width:50%;
+    float: left;
+  }
+
+  .ac_name, .ac_detail {
+    color: black;
+  }
+
+  .ac_name {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+  }
+
+  .ac_detail {
+    font-size: 1.8rem;
+  }
+}
 
 
 //內容右邊css 

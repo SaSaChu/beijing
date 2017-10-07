@@ -53,7 +53,7 @@
 }
 @font-face {
   font-family: "icomoon";
-  src: url('/beijing/font/icomoon/icomoon.eot?1507294546') format('embedded-opentype'), url('/beijing/font/icomoon/icomoon.woff?1507294546') format('woff'), url('/beijing/font/icomoon/icomoon.ttf?1507294546') format('truetype'), url('/beijing/font/icomoon/icomoon.svg?1507294546') format('svg');
+  src: url('/beijing/font/icomoon/icomoon.eot?1507361416') format('embedded-opentype'), url('/beijing/font/icomoon/icomoon.woff?1507361416') format('woff'), url('/beijing/font/icomoon/icomoon.ttf?1507361416') format('truetype'), url('/beijing/font/icomoon/icomoon.svg?1507361416') format('svg');
 }
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon', Monaco, "微軟正黑體", "Microsoft JhengHei";
@@ -90,20 +90,12 @@
   background-color: #96c8ff;
 }
 
-.icon-dash:before {
-  content: "\f0ca";
+.icon-reload:before {
+  content: "\e906";
 }
 
-.icon-plus:before {
-  content: "\f05d";
-}
-
-.icon-close:before {
-  content: "\e5cd";
-}
-
-.icon-dehaze:before {
-  content: "\e3c7";
+.icon-hand:before {
+  content: "\e905";
 }
 
 .icon-chevron-down:before {
@@ -120,6 +112,22 @@
 
 .icon-chevron-up:before {
   content: "\e903";
+}
+
+.icon-close:before {
+  content: "\e5cd";
+}
+
+.icon-dehaze:before {
+  content: "\e3c7";
+}
+
+.icon-dash:before {
+  content: "\f0ca";
+}
+
+.icon-plus:before {
+  content: "\f05d";
 }
 
 .icon-search:before {
@@ -200,8 +208,9 @@ html body {
 #out_boxs .left_boxs a {
   display: inline-block;
   width: 100%;
+  height: 75px;
+  line-height: 75px;
   margin-bottom: 5px;
-  padding: 25px 0;
   background-color: #e8e8e8;
   -webkit-border-top-left-radius: 40px;
   -webkit-border-bottom-left-radius: 40px;
@@ -220,7 +229,9 @@ html body {
 }
 @media screen and (max-width: 1440px) and (min-width: 0) {
   #out_boxs .left_boxs a {
-    padding: 20px 0;
+    font-size: 1rem;
+    height: 50px;
+    line-height: 50px;
   }
 }
 #out_boxs .left_boxs a:hover, #out_boxs .left_boxs a:active {
@@ -254,6 +265,7 @@ html body {
 #out_boxs .right_boxs .R_left_boxs {
   width: calc(100% - 350px);
   height: 100%;
+  padding: 10px;
 }
 @media screen and (max-width: 1239px) and (min-width: 1100px) {
   #out_boxs .right_boxs .R_left_boxs {
