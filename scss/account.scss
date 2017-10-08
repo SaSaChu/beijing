@@ -10,26 +10,51 @@ $deep_blue: rgba(30, 49, 80, 1.00);
 $light_gray: rgba(232, 232, 232, 1.00);
 $deep_gray: rgba(73, 73, 73, 1.00);
 
-// 內容左邊css
+//右邊：內容左邊css
 .ac_title {
   display: inline-block;
   width: 100%;
   padding: 70px 0;
   color: $deep_gray;
   font-size: 2rem;
+
+  @include range-width(769px, 1441px) {
+    padding: 45px 0;
+  }
 }
 
 .ac_boxs {
   display: inline-block;
   width: 100%;
-  padding: 0 0 45px 100px;
+  padding: 0 100px 45px 100px;
   @include clearfix();
   text-align: left;
 
+  @include range-width(1146px, 1441px) {
+    padding: 0 40px 35px 40px;
+  }
+
+  @include range-width(769px, 1146px) {
+    padding: 0 20px 35px 20px;
+  }
+
+  &.pw_boxs {
+    padding-top: 150px;
+
+    +.pw_boxs {
+      padding-top: 0;
+      width: 100%;
+      float: left;
+    }
+  }
 
   &:nth-child(2), &:nth-child(3) {
     width:50%;
     float: left;
+
+    @include range-width(769px, 951px) {
+      width: 100%;
+    }
   }
 
   .ac_name, .ac_detail {
@@ -37,17 +62,135 @@ $deep_gray: rgba(73, 73, 73, 1.00);
   }
 
   .ac_name {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     padding-bottom: 10px;
+
+    &:before {
+      display: inline-block;
+      content: '*';
+      color: red;
+      font-size: .9rem;
+      padding: 6px 5px 0 0;
+    }
+
+    &.pw_name {
+      color: $deep_gray;
+      padding-left: 8px; 
+
+      &:before {
+        display: inline-block;
+        content: '';
+      }
+    }
   }
 
   .ac_detail {
-    font-size: 1.8rem;
+    @include range-width(0, 1441px) {
+      font-size: 1.4rem;
+    }
+
+    font-size: 1.6rem;
+    padding-left: 12px; 
+
+    &.pw_detail {
+      font-size: 1.2rem;
+    }
+  }
+
+  input {
+    @include range-width(0, 1441px) {
+      font-size: 1.4rem;
+    }
+
+    display: inline-block;
+    width: 100%;
+    color: black;
+    font-size: 1.6rem;
+    padding: 10px 12px; 
+    background-color: transparent;
+    border: 1px solid rgba(162, 163, 163, 1.00);
+  }
+}
+
+.ac_change {
+  display: inline-block;
+  width: 30%;
+  float: right;
+  padding-right: 100px;
+  text-align: left;
+  @include clearfix();
+
+  @include range-width(1146px, 1441px) {
+    width: 35%;
+    padding-right: 40px;
+  }
+
+  @include range-width(951px, 1146px) {
+    width: 40%;
+    padding-right: 20px;
+  }
+
+  @include range-width(769px, 951px) {
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  span {
+    display: inline-block;
+    width: 100%;
+    color: $light_blue;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    text-decoration: underline;
+  }
+
+  button, .ac_btn {
+    display: inline-block;
+    background-color: $deep_blue;
+    border: 0;
+    outline: 0;
+    color: white;
+    font-size: 1.2rem;
+    height: 60px;
+    line-height: 60px;
+    cursor: pointer;
+
+    @include transition(background-color .3s);
+    
+    &:hover, &:active {
+      background-color: $light_blue;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .ac_btn {
+    width: calc(50% - 10px);
+    margin-left: 10px;
+    float: left;
+
+    @include range-width(769px, 951px) {
+      &:nth-child(1) {
+        width: calc(50% - 5px);
+        margin-left: 0;
+        margin-right: 5px;
+      }
+
+      &:nth-child(2) {
+        width: calc(50% - 5px);
+        margin-left: 5px;
+        margin-right: 0;
+      }
+    }
   }
 }
 
 
-//內容右邊css 
+
+//右邊：右邊menu標題
 .top_box {
 
   @include range-width(769px, 1240px) {
@@ -62,4 +205,90 @@ $deep_gray: rgba(73, 73, 73, 1.00);
   line-height: 65px;
   color: white;
 }
+
+//右邊：右邊下拉menu樣式
+.menu_box {
+  display: inline-block;
+  width: 100%;
+  padding-left: 29px;
+  @include clearfix();
+
+  .menu_span {
+    display: inline-block;
+    width: 100%;
+    height: 15px;
+    float: left;
+    border-left: 1px solid $deep_blue;
+  }
+
+  .a_boxs {
+    display: inline-block;
+    width: 100%;
+    float: left;
+    text-align: left;
+    @include clearfix();
+
+    &:before {
+      display: inline-block;
+      content: '';
+      height: 37px;
+      border-left: 1px solid $deep_blue;
+    }
+
+    &:last-child {
+      &:before {
+        display: inline-block;
+        content: '';
+        height: 19px;
+        border-left: 1px solid $deep_blue;
+      }
+    }
+
+    a {
+      display: inline-block;
+      cursor: pointer;
+      padding: 5px 0;
+
+      font-size: 1.2rem;
+      color: black;
+      text-decoration: none;
+      @include transition(color .3s);
+
+      &:hover, &:active {
+        color: $deep_blue;
+      } 
+
+      &:before {
+        display: inline-block;
+        content: '─';
+        color: $deep_blue;
+        margin-right: 5px;
+      }
+
+      &.aac {
+        color: $deep_blue;
+      }
+    }
+
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
