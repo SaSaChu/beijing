@@ -82,7 +82,7 @@
 .table_boxs .table .tr .td {
   display: table-cell;
   font-size: 1.3rem;
-  color: #2b2b2b;
+  color: #e8e8e8;
   padding: 15px 0;
 }
 @media screen and (max-width: 1110px) and (min-width: 891px) {
@@ -100,7 +100,7 @@
   padding: 0;
   margin: 0;
   font-size: 1.3rem;
-  color: #2b2b2b;
+  color: black;
   padding: 0 10px;
 }
 @media screen and (max-width: 1110px) and (min-width: 891px) {
