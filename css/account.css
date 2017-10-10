@@ -260,6 +260,9 @@
   padding-left: 29px;
   *zoom: 1;
 }
+.menu_box.vo_no {
+  padding-left: 0;
+}
 .menu_box:after {
   display: table;
   content: "";

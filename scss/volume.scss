@@ -1,0 +1,199 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+$light_blue: rgba(13, 92, 163, 1.00);
+$deep_blue: rgba(30, 49, 80, 1.00);
+$light_gray: rgba(232, 232, 232, 1.00);
+$deep_gray: rgba(73, 73, 73, 1.00);
+
+// 右邊：右邊選單內容
+.vo_menu_boxs {
+  display: inline-block;
+  width: 100%;
+  padding: 20px;
+  text-align: left;
+
+  .vo_menu_title, .vo_menu_blue, .vo_menu_link {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .vo_menu_title {
+    color: black;
+    font-size: 1.2rem;
+  } 
+
+  .vo_menu_blue {
+    background-color: rgba(227, 242, 255, 1.00);
+    padding: 20px 10px;
+    margin: 20px 0;
+    
+    span, .vo_blue_box {
+      display: inline-block;
+      width: 100%;
+      font-size: 1.2rem;
+      color: black;
+    }
+
+    .vo_blue_box {
+      padding: 10px 0;
+      @include clearfix();
+      
+      .vo_text {
+        display: inline-block;
+        float: left;
+
+        &.vo_text_two {
+          width: calc(100% - 100px);
+        }
+      }
+    }
+  } 
+
+  .vo_menu_link {
+    .vo_link_boxs {
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 15px;
+
+      span {
+        display: inline-block;
+        font-size: 1.2rem;
+        color: black;
+        padding-right: 50px;
+      }
+
+      .vo_link_box {
+        display: inline-block;
+        width: calc(100% - 110px);
+        @include clearfix();
+
+        a {
+          display: inline-block;
+          float: left;
+          font-size: 1.2rem;
+          line-height: 30px;
+          color: black;
+          cursor: pointer;
+          text-decoration: underline;
+          @include transition(color .3s);
+          
+          &:hover, &:active {
+            color: $light_blue;
+            text-decoration: underline;
+          }
+
+          &:nth-child(3n+2) {
+            padding: 0 15px;
+          }
+        }
+      }
+
+      
+    }
+  } 
+}
+
+
+// 右邊：左邊內容
+.im_right_boxs {
+  &.vo_top {
+    padding-top: 50px; 
+  }
+}
+
+.im_cent_boxs {
+  &.vo_cnet {
+    height: calc(100% - 50px);
+
+    @include range-width(769px, 1356px) {
+      height: calc(100% - 50px - 30px);
+    }
+
+    span {
+      display: inline-block;
+      width: 100%;
+      font-size: 1.5rem;
+      color: black;
+    }
+  }
+} 
+
+
+.im_title {
+  @include clearfix();
+
+  .vo_top_left, .vo_top_right {
+    display: inline-block;
+    width: 50%;
+    height: 30px;
+
+    @include range-width(769px, 1356px) {
+      width: 100%;
+    }
+  }
+
+  .vo_top_left {
+    float: left;
+    font-size: 1.2rem;
+    color: $deep_gray;
+
+    @include range-width(769px, 1000px) {
+      font-size: 1rem;
+    }
+
+    &:before {
+      display: inline-block;
+      content: '\e907';
+      font-family: 'icomoon';
+      padding: 3px 10px 0 0;
+    }
+  }
+
+  .vo_top_right {
+    float: right;
+    @include clearfix();
+
+    span {
+      display: inline-block;
+      font-size: 1.2rem;
+      color: $deep_gray;
+      line-height: 30px;
+      float: right;
+    }
+
+    button {
+      display: inline-block;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      line-height: 25px;
+      background-color: $deep_gray;
+      color: white;
+      font-size: 1.2rem;
+      border: 0;
+      outline: 0;
+      float: right;
+      margin-left: 15px;
+
+      &:hover, &:active {
+        background-color: $deep_blue;
+      }
+
+      &.vo_ac {
+        background-color: $deep_blue;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+

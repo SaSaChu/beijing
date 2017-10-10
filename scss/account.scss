@@ -216,6 +216,11 @@ $deep_gray: rgba(73, 73, 73, 1.00);
 
 //右邊：右邊下拉menu樣式
 .menu_box {
+
+  &.vo_no {
+    padding-left: 0;
+  }
+
   display: inline-block;
   width: 100%;
   padding-left: 29px;
