@@ -1,0 +1,201 @@
+/**
+ * @author      ZEUS Design - http://www.zeusdesign.com.tw
+ * @copyright   Copyright (c) 2016 ZEUS Design
+ */
+
+@import "_oa";
+
+$light_blue: rgba(13, 92, 163, 1.00);
+$deep_blue: rgba(30, 49, 80, 1.00);
+$light_gray: rgba(232, 232, 232, 1.00);
+$deep_gray: rgba(73, 73, 73, 1.00);
+$cent_gray: rgba(150, 150, 150, 1.00);
+
+
+.im_left_boxs {
+  display: inline-block;
+  width: calc(100% - 135px);
+  height: 100%;
+  float: left;
+  text-align: left;
+
+  .run_boxs {
+    display: inline-block;
+    width: 100%;
+    @include clearfix();
+    
+    .run {
+      display: inline-block;
+      width: calc(100% - 45px);
+      height: 45px;
+      line-height: 45px;
+      float: left;
+      background-color: $light_blue;
+      font-size: 1.5rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    .run_btn{
+      display: inline-block;
+      cursor: pointer;
+      width: 45px;
+      height: 45px;
+      float: right;
+      color: white;
+      background-color: $deep_gray;
+      font-size: 2rem;
+      border: 0;
+      outline: 0;
+      @include transition(all .3s);
+      
+      &:hover, &:active {
+        background-color: $deep_blue
+      }
+    }
+  }
+
+  .im_title {
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5rem;
+    color: $deep_gray;
+    padding: 10px 0;
+  }
+
+  .im_cent_boxs {
+    display: inline-block;
+    width: 100%;
+    height: calc(100% - 45px - 55px);
+    overflow-y: scroll;
+    background-color: white;
+    padding: 10px;
+
+    .im_cent_box {
+      display: inline-block;
+      width: 100%;
+      padding-bottom: 20px;
+      @include clearfix();
+
+      @include range-width(769px, 1301px) {
+        padding-bottom: 30px;
+      }
+
+      .im_number, .im_date, .im_fill {
+        display: inline-block;
+        font-size: 1.4rem;
+        float: left;
+      }
+
+      .im_number {
+        padding: 0 10px;
+        color: $cent_gray;
+
+        @include range-width(769px, 1301px) {
+          padding-bottom: 5px;
+        }
+      }
+
+      .im_date {
+        padding-left: 10px;
+        padding-right: 40px;
+        color: $cent_gray;
+
+        @include range-width(769px, 1301px) {
+          padding-bottom: 5px;
+        }
+      }
+
+      .im_fill {
+        width: calc(100% - 250px);
+        color: black;
+
+        @include range-width(769px, 1301px) {
+          width: 100%;
+          padding: 0 8px;
+        }
+      }
+    }
+  }
+}
+
+.im_right_boxs {
+  display: inline-block;
+  width: 135px;
+  height: 100%;
+  float: left;
+  padding-top: 100px;
+  position: relative;
+
+  .r_btn_boxs {
+    display: inline-block;
+    width: 100%;
+    cursor: pointer;
+
+    &:hover, &:active {
+      .gray_boxs {
+        background-color: $deep_blue;
+      }
+
+      span {
+        color: $deep_blue;
+      }
+    }
+  
+    .gray_boxs {
+      display: inline-block;
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
+      @include border-radius(30px);
+      background-color: $cent_gray;
+      color: white;
+      font-size: 2rem;
+      @include transition(all .3s);
+    }
+
+    span {
+      display: inline-block;
+      width: 100%;
+      font-size: 1rem;
+      color: $cent_gray;
+      padding-top: 10px;
+      @include transition(all .3s);
+    }
+  }
+
+  .r_arrow_boxs {
+    display: inline-block;
+    width: 100%;
+    padding-left: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    .arrow_box {
+      display: inline-block;
+      width: calc(50% - 10px / 2);
+      height: 55px;
+      line-height: 55px;
+      color: white;
+      font-size: 3rem;
+      background-color: $cent_gray;
+      @include transition(all .3s);
+      
+      &:hover, &:active {
+        background-color: $deep_blue;
+      }
+
+      &:nth-child(1) {
+        float: left;
+        margin-right: 5px;
+      }
+
+      &:nth-child(2) {
+        float: right;
+        margin-left: 5px;
+      }
+    }
+  }
+
+}

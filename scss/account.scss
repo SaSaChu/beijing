@@ -256,6 +256,11 @@ $deep_gray: rgba(73, 73, 73, 1.00);
       display: inline-block;
       cursor: pointer;
       padding: 5px 0;
+      text-overflow: ellipsis;
+      
+      white-space : nowrap;
+      width: 90%;
+      overflow : hidden;
 
       font-size: 1.2rem;
       color: black;
